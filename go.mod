@@ -1,4 +1,4 @@
-module syntaxhighlight
+module github.com/kaliwin/syntaxhighlight
 
 go 1.22.2
 
