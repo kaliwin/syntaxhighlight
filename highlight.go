@@ -197,7 +197,7 @@ func Print(s *scanner.Scanner, w io.Writer, p Printer) error {
 	tok := s.Scan()
 	for tok != scanner.EOF {
 		tokText := s.TokenText()
-		err := p.Print(w, tokenKind(tok, tokText), tokText)
+		err := p.Print(w, TokenKind(tok, tokText), tokText)
 		if err != nil {
 			return err
 		}
@@ -218,7 +218,7 @@ func Annotate(src []byte, a Annotator) (annotate.Annotations, error) {
 	for tok != scanner.EOF {
 		tokText := s.TokenText()
 
-		ann, err := a.Annotate(read, tokenKind(tok, tokText), tokText)
+		ann, err := a.Annotate(read, TokenKind(tok, tokText), tokText)
 		if err != nil {
 			return nil, err
 		}
@@ -271,7 +271,8 @@ func NewScannerReader(src io.Reader) *scanner.Scanner {
 	return &s
 }
 
-func tokenKind(tok rune, tokText string) Kind {
+// TokenKind 修改为公开的函数
+func TokenKind(tok rune, tokText string) Kind {
 	switch tok {
 	case scanner.Ident:
 		if _, isKW := keywords[tokText]; isKW {
