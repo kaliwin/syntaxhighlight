@@ -5,10 +5,10 @@
 
 
 ```
-
+修改 syntaxhighlight.tokenKind 为公开函数
 ```
 
-
+![image-20240425121115921](./README/image-20240425121115921.png)
 
 Package syntaxhighlight provides syntax highlighting for code. It currently uses a language-independent lexer and performs decently on JavaScript, Java, Ruby, Python, Go, and C.
 
