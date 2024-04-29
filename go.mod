@@ -1,6 +1,6 @@
 module github.com/kaliwin/syntaxhighlight
 
-go 1.22.2
+go 1.20
 
 require (
 	github.com/kr/pretty v0.3.1
